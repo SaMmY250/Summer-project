@@ -1,0 +1,204 @@
+#logout {
+    background: #ef290b;
+    color: white;
+    border-radius: 0 0 12px 12px;
+}
+
+#logout:hover {
+    background-color: #c5050e;
+}
+
+.border-first {
+    border-radius: 12px 12px 0 0;
+}
+
+#logo {
+    /* height: 10%; */
+    margin: 4px;
+    padding: auto;
+    /* border-left: 1px solid #eee; */
+    height: 60px;
+    width: fit-content;
+    border: 2px solid #eee;
+    /* background: #fff; */
+    border-radius: 100%;
+}
+
+.nav-space {
+    margin: auto 18px;
+}
+
+/*-----------------------------------------*/
+
+#setting {
+    /* overflow: auto; */
+    margin-right: 16px;
+    padding: 8px 14px;
+}
+
+
+#profile-container {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    padding: 20px;
+}
+
+/*******************************************************************/
+
+/* Style The Dropdown Button */
+.dropbtn {
+    color: aliceblue;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    border-radius: 12px;
+    width: fit-content;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 2px 12px 16px 0px rgba(0, 0, 0, 0.2);
+    margin-top: 1px;
+    z-index: 1;
+    right: 0;
+    top: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    text-align: center;
+    align-content: center;
+    padding: 10px 18px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: rgb(225, 225, 225);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #0059b8;
+}
+
+/**********************/
+/*
+    Login
+*/
+
+#login {
+    border-radius: 12px;
+    border: none !important;
+}
+
+/*
+--- Profile picture ----
+*/
+
+.border-right {
+    top: 0;
+    margin: 0px 8px;
+}
+
+.profile-img {
+    background-color: rgb(205, 205, 205);
+}
+
+.profile-pic {
+    background-color: rgb(205, 205, 205);
+    margin: auto 0 !important;
+    padding: 0 !important;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+/**----
+    About US
+----*/
+
+.box {
+    display: inline-block;
+    padding: 8px 6px;
+    margin: 4px 2px;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    height: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+.team-pic {
+    border: none;
+    border-radius: 100%;
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    margin-top: .5ch;
+    margin-bottom: 1.2ch;
+}
+
+.mail {
+    color: #000;
+}
+
+#footer-mail {
+    color: white;
+}
+
+.mail:hover,
+#footer-mail:hover {
+    color: #7cd0ff;
+    text-decoration: none;
+    transition: ease .3s;
+}
+
+.mail:not(:hover),
+#footer-mail:not(:hover) {
+    transition: ease-out .6s;
+}
+
+/*
+---- Pie chart_wrap
+*/
+#chart_wrap {
+    position: static;
+    /* padding-bottom: 100%; */
+    height: 100%;
+    overflow: hidden;
+}
+
+#chart_div {
+    position: relative;
+    top: 0;
+    left: 0;
+}
