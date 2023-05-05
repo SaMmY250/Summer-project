@@ -26,4 +26,8 @@ Route::get('/login',function(){
     return view('login');
 });
 
+// Route::get('/formhomepage',function(){
+//     return view('formhomepage');
+// });
+
 Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
