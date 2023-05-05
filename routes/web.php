@@ -18,10 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('/home',function(){
-    return view('hello');
+    return view('dashboard');
 });
 
 
 Route::get('/login',function(){
     return view('login');
 });
+
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
