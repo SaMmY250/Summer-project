@@ -202,3 +202,15 @@
     top: 0;
     left: 0;
 }
+
+
+/*
+    image class
+*/
+
+.content-image {
+    background: url("https://media.istockphoto.com/id/1019948816/photo/mechanic-repairing-customized-motorcycle.jpg?s=170667a&w=0&k=20&c=HrDiHUoaHN-apvv41UJFUFcOws5VJU5bKWCH3LjyGso=");
+    background-size: cover;
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+}

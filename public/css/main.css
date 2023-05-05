@@ -183,15 +183,18 @@ main {
     color: black;
 }
 
-.container {
+.container,
+.container-50 {
     margin-top: 32px;
     margin-bottom: 50px;
     box-shadow: 4px 8px 20px 0px rgb(100 100 100 / 32%);
-    background: aliceblue;
+    background: #f0f8ff;
     border: none;
     border-radius: 8px;
     padding: 32px;
 }
+
+
 
 #no-background {
     background: none;
