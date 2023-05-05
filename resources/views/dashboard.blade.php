@@ -11,4 +11,21 @@
             </div>
         </div>
     </header>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-sm-3">Our categories</div>
+            <div class="col-sm-4">Our Service</div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-sm-3">Bike</div>
+            <div class="col-sm-4">Engineen tune</div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-sm-3">Scooter</div>
+            <div class="col-sm-4">Oil change</div>
+        </div>
+    </div>
 @endsection
