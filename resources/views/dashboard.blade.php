@@ -1,13 +1,14 @@
-@extends("layouts/main")
+@extends('layouts/main')
 @section('title', 'Dashboard')
 @section('body')
-@include("layouts/navbar")
-<header class="content-image py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-black">
-            <h1 class="display-4 fw-bolder">Bike management system</h1>
-            <p class="lead fw-normal text-black-50 mb-0">With this shop hompeage template</p>
+    @include('layouts/navbar')
+    <header class="content-image py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-black">
+                <h1 class="display-4 fw-bolder">Bike management system</h1>
+                <p class="lead fw-normal text-black-50 mb-0">With this shop hompeage template</p>
+                <button class="btn btn-primary pl-4 pr-5 mt-5">Service Center</button>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 @endsection
