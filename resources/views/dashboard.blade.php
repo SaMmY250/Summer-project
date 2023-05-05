@@ -7,7 +7,7 @@
             <div class="text-center text-black">
                 <h1 class="display-4 fw-bolder">Bike management system</h1>
                 <p class="lead fw-normal text-black-50 mb-0">With this shop hompeage template</p>
-                <button class="btn btn-primary pl-4 pr-5 mt-5">Service Center</button>
+                <button class="btn btn-primary px-4 py-3 mt-5">Service Center</button>
             </div>
         </div>
     </header>
