@@ -35,5 +35,5 @@ Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
 Route::post('/submit-form', 'FormController@submitForm')->name('submit-form');
 
 Route::get('/submit-form-view',function(){
-    return view('layouts.submit-form');
+    return view('submit-form');
  })->name('submit-form-view');
