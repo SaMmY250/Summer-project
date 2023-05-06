@@ -19,15 +19,21 @@ Route::get('/', function () {
 
 Route::get('/home',function(){
     return view('dashboard');
-});
+})->name('home');
 
 
 Route::get('/login',function(){
     return view('login');
 });
 
-// Route::get('/formhomepage',function(){
-//     return view('formhomepage');
-// });
+ Route::get('/aboutus',function(){
+     return view('aboutus');
+    })-> name('aboutus');
 
 Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
+
+Route::post('/submit-form', 'FormController@submitForm')->name('submit-form');
+
+Route::get('/submit-form-view',function(){
+    return view('submit-form');
+ })->name('submit-form-view');
