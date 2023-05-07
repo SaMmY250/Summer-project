@@ -6,7 +6,10 @@
         <form method="POST" action="{{ route('submit-form') }}">
             @csrf
             <label for="vehicle-type">Vehicle Type:</label>
-            <input type="text" name="vehicle-type" id="vehicle-type" required ><br>
+            <select name="request-type" id="request-type" required>
+                <option value="Bike">Bike</option>
+                <option value="Scooty">Scooty</option>
+                 </select><br>
 
             <label for="full-name">Owner's Full Name:</label>
             <input type="text" name="full-name" id="full-name" required>
@@ -20,11 +23,14 @@
             <label for="vehicle-name">Vehicle Name:</label>
             <input type="text" name="vehicle-name" id="vehicle-name" required>
 
-            <label for="vehicle-contact">Vehicle Contact Number:</label>
-            <input type="tel" name="vehicle-contact" id="vehicle-contact" required>
+            <label for="vehicle-lot-no">Vehicle Lot Number:</label>
+            <input type="tel" name="vehicle-lot-num" id="vehicle-lot-num" required>
 
-            <label for="services">Services:</label>
-            <textarea name="services" id="services" required></textarea>
+            <label for="services">Services:<br></label>
+                <input type="checkbox" name="service_type[]" value="oil_change">Oil Change<br>
+                <input type="checkbox" name="service_type[]" value="engine_service">Engine Service<br>
+                <input type="checkbox" name="service_type[]" value="bike_wash">Bike Wash<br>
+                <input type="checkbox" name="service_type[]" value="tire_replacement">Tire Replacement<br>
 
             <label for="request-type">Request Type:</label>
             <select name="request-type" id="request-type" required>
