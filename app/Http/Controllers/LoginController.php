@@ -1,26 +1,20 @@
-
-namespace App\Http\Controllers;
 <?php
 
+namespace App\Http\Controllers;
+
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests;
-use DB; // Database
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function setLogin()
-    {
-        return view('Login');
-    }
-
     public function loginCheck(Request $request)
     {
         // dd($request->except('_token'));
         $credentials = $request->except('_token');
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('admin_dashboard');
+            return redirect()->route('home');
         } else {
             $script = "<script>
                 alert('Login Failed');
@@ -28,6 +22,17 @@ class LoginController extends Controller
             echo $script;
         }
     }
+
+    public function setLogin(Request $request)
+    {
+        $user = new User();
+        $user->name = " ";
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+        $script = "<script>
+                alert('Added user');
+            </script>";
+        echo $script;
+    }
 }
-
-

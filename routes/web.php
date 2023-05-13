@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +43,13 @@ Route::get('/submit-form-view',function(){
  Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
 
+Route::get('/user/login',function(){
+    return view('users.userloginpage');
+})->name('userloginpage');
 
+Route::get('/user/register', function () {
+    return view('users.register');
+})->name('register');
 
-
-
+Route::post('/user/check', [LoginController::class, 'loginCheck'])->name('login_check');
+Route::post('/user/set', [LoginController::class, 'setLogin'])->name('set_login');
