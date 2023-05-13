@@ -30,7 +30,23 @@
         <div class="row mt-2">
             <div class="col-sm-3">Scooter</div>
             <div class="col-sm-3">Oil change</div>
-
         </div>
+
+     <div class="row mt-2">
+
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">Tire Replacement</div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+    </div>
+
+    <div class="row mt-2">
+
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">Overall checkup</div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3"></div>
+</div>
+
     </div>
 @endsection

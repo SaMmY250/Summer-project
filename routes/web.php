@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,18 +22,26 @@ Route::get('/home',function(){
 })->name('home');
 
 
-Route::get('/login',function(){
-    return view('login');
+Route::get('/admin/login',function(){
+    return view('admins.login');
 });
 
  Route::get('/aboutus',function(){
      return view('aboutus');
     })-> name('aboutus');
 
-Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
+Route::get('/admin/dashboard', '')->middleware('auth');
 
-Route::post('/submit-form', 'FormController@submitForm')->name('submit-form');
+Route::post('/submit-form-post', [FormController::class,'form_table'])->name('submit-form-post');
 
 Route::get('/submit-form-view',function(){
     return view('submit-form');
  })->name('submit-form-view');
+
+ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+
+
+
+
+

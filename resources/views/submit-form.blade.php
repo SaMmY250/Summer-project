@@ -3,7 +3,7 @@
 @section('body')
     @include('layouts/navbar')
     <div class="container form_wrap">
-        <form method="POST" action="{{ route('submit-form') }}">
+        <form method="POST" action="{{ route('submit-form-post') }}">
             @csrf
             <label for="vehicle-type">Vehicle Type:</label>
             <select name="request-type" id="request-type" required>
@@ -11,7 +11,7 @@
                 <option value="Scooty">Scooty</option>
                  </select><br>
 
-            <label for="full-name">Owner's Full Name:</label>
+            <label for="full-name">Client Full Name:</label>
             <input type="text" name="full-name" id="full-name" required>
 
             <label for="contact">Contact Number:</label>
@@ -27,10 +27,10 @@
             <input type="tel" name="vehicle-lot-num" id="vehicle-lot-num" required>
 
             <label for="services">Services:<br></label>
-                <input type="checkbox" name="service_type[]" value="oil_change">Oil Change<br>
-                <input type="checkbox" name="service_type[]" value="engine_service">Engine Service<br>
-                <input type="checkbox" name="service_type[]" value="bike_wash">Bike Wash<br>
-                <input type="checkbox" name="service_type[]" value="tire_replacement">Tire Replacement<br>
+                <input type="checkbox" name="service[]" value="oil_change">Oil Change<br>
+                <input type="checkbox" name="service[]" value="engine_service">Engine Service<br>
+                <input type="checkbox" name="service[]" value="bike_wash">Bike Wash<br>
+                <input type="checkbox" name="service[]" value="tire_replacement">Tire Replacement<br>
 
             <label for="request-type">Request Type:</label>
             <select name="request-type" id="request-type" required>
