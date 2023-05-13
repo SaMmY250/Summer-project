@@ -14,11 +14,11 @@ use App\Http\Controllers\FormController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('users.dashboard');
 });
 
 Route::get('/home',function(){
-    return view('dashboard');
+    return view('users.dashboard');
 })->name('home');
 
 
@@ -27,7 +27,7 @@ Route::get('/admin/login',function(){
 });
 
  Route::get('/aboutus',function(){
-     return view('aboutus');
+     return view('users.aboutus');
     })-> name('aboutus');
 
 Route::get('/admin/dashboard', '')->middleware('auth');
@@ -35,7 +35,7 @@ Route::get('/admin/dashboard', '')->middleware('auth');
 Route::post('/submit-form-post', [FormController::class,'form_table'])->name('submit-form-post');
 
 Route::get('/submit-form-view',function(){
-    return view('submit-form');
+    return view('users.submit-form');
  })->name('submit-form-view');
 
  Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
