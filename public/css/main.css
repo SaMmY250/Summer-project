@@ -73,6 +73,13 @@ main {
     margin-right: -25px;
 }
 
+.nothing{
+    padding: 0% !important;
+    margin: 0% !important;
+    width: 8% !important;
+    /* height: 10% !important; */
+}
+
 .form_wrap {
     margin-top: 35px;
 }

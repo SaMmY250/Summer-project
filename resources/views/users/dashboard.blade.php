@@ -10,7 +10,7 @@
             <div class="text-center text-black">
                 <h1 class="display-4 fw-bolder">Bike management system</h1>
                 <p class="lead fw-normal text-black-50 mb-0">any problem every solution.</p>
-                <a href="{{ route('submit-form-view') }}" class="btn btn-primary btn-lg rounded-0 mt-4">Fill Form</a>
+                <a href="{{ route('userloginpage') }}" class="btn btn-primary btn-lg rounded-0 mt-4">Login</a>
             </div>
         </div>
     </header>
@@ -35,7 +35,23 @@
         <div class="row mt-2">
             <div class="col-sm-3">Scooter</div>
             <div class="col-sm-3">Oil change</div>
-
         </div>
+
+     <div class="row mt-2">
+
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">Tire Replacement</div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+    </div>
+
+    <div class="row mt-2">
+
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">Overall checkup</div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3"></div>
+</div>
+
     </div>
 @endsection
