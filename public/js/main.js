@@ -6,5 +6,3 @@ function showPassword() {
         x.type = "password";
     }
 }
-
-function setAdmin() {}

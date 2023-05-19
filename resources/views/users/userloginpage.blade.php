@@ -3,8 +3,16 @@
 @section('title', 'login')
 @section('body')
     <script src="{{ asset('js/main.js') }}"></script>
-    <div class="wrapper linear-background">
 
+    @if (\Session::has('success'))
+        <div class="alert alert-success">
+            <ul>
+                <li>{!! \Session::get('success') !!}</li>
+            </ul>
+        </div>
+    @endif
+
+    <div class="wrapper linear-background">
         <div class="registration_form">
             <!-- Title -->
             <div class="title">
@@ -12,17 +20,19 @@
             </div>
 
             <!-- Form -->
-            <form action="{{ route('login_check') }}" method="post">
+            <form action="{{ route('login.check') }}" method="post">
                 @csrf
                 <div class="form_wrap">
                     <!-- Email Id input Place -->
                     <div class="input_wrap">
-                        <label>Email</label>
-                        <input type="text" name="email" required>
+                        <label>Enter a E-mail</label>
+                        <input type="email" name="email" required>
                     </div>
 
+                    {{-- Password --}}
+
                     <div class="input_wrap">
-                        <label>Password</label>
+                        <label>Enter a Password</label>
                         <input type="password" name="password" id="myInput" required />
                     </div>
 
