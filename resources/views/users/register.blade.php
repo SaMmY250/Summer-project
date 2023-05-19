@@ -12,17 +12,23 @@
             </div>
 
             <!-- Form -->
-            <form action="{{ route('set_login') }}" method="post">
+            <form action="{{ route('login.set') }}" method="post">
                 @csrf
                 <div class="form_wrap">
+                    <!-- Name Id input Place -->
+                    <div class="input_wrap">
+                        <label>Enter a Name</label>
+                        <input type="text" name="name" required>
+                    </div>
+
                     <!-- Email Id input Place -->
                     <div class="input_wrap">
-                        <label>Email</label>
+                        <label>Enter a E-mail</label>
                         <input type="text" name="email" required>
                     </div>
 
                     <div class="input_wrap">
-                        <label>Password</label>
+                        <label>Enter a Password</label>
                         <input type="password" name="password" id="myInput" required />
                     </div>
 
