@@ -26,7 +26,7 @@ Route::get('/home',function(){
 
 Route::get('/admin/login',function(){
     return view('admins.login');
-});
+})->name('admin_dashboard');
 
  Route::get('/aboutus',function(){
      return view('users.aboutus');

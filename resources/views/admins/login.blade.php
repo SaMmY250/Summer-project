@@ -46,5 +46,7 @@
                 </div>
             </form>
         </div>
+        <a href="{{ route('admin_dashbboard') }}">
+        </a>
     </div>
 @endsection
