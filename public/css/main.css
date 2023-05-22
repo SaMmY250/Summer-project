@@ -323,8 +323,9 @@ img {
     width: 256px;
     background-color: #abd8ff;
     position: fixed;
-    height: 100vh;
+    height: 100%;
     overflow: auto;
+    text-align: left;
 }
 
 /* Sidebar links */
@@ -345,6 +346,16 @@ img {
 .sidebar a:hover:not(.active) {
     background-color: rgb(115, 115, 115);
     color: white;
+}
+
+/*main container*/
+.main-wrap {
+    float: left;
+    width: 100%;
+}
+
+.main {
+    margin-left: 200px;
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */

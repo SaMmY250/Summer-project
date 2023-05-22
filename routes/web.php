@@ -38,7 +38,7 @@ Route::get('/admin/aboutus', function () {
 // Route::get('/admin/dashboard', '')->middleware('auth')->name ('admin_dashboard');
 Route::get('/admin/dashboard', function () {
     return view('admins.admin_dashboard');
-})->name('admin-dashboard');
+})->name('admin-dashboard')->middleware('auth');
 
 Route::post('/submit-form-post', [FormController::class, 'form_table'])->name('submit-form-post');
 
