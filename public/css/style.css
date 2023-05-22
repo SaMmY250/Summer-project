@@ -212,3 +212,15 @@
     background-blend-mode: lighten;
     background-repeat: no-repeat;
 }
+
+/*
+    Navbar
+*/
+
+.nav-item:hover {
+    width: 100%;
+}
+
+.nav {
+    display: block !important;
+}

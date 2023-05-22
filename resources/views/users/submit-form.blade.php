@@ -32,9 +32,10 @@
 
                     <label for="services" class="my-2">Services:</label><br>
                     <div class="input-warp">
-                        <input type="radio"class="nothing" name="service" value="Engine Service">Engine Service<br>
-                        <input type="radio"class="nothing" name="service" value="bike wash">Bike Wash<br>
-                        <input type="radio"class="nothing" name="service" value="tire replacement">Tire Replacement<br>
+                        <input type="checkbox"class="nothing" name="service1" value="Engine Service">Engine Service<br>
+                        <input type="checkbox"class="nothing" name="service2" value="bike wash">Bike Wash<br>
+                        <input type="checkbox"class="nothing" name="service3" value="tire replacement">Tire Replacement<br>
+                        <input type="checkbox"class="nothing" name="service4" value="oil change">Oil Change<br>
                     </div>
 
                     <label for="request-type" class="my-2">Request Type:</label>

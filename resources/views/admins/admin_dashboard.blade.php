@@ -1,15 +1,36 @@
 @extends('layouts/main')
 @section('title', 'Dashboard')
 @section('body')
-    @include('layouts/navbar')
-    <header class="content-image py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-black">
-                <h1 class="display-4 fw-bolder">Bike management system</h1>
-                <p class="lead fw-normal text-black-50 mb-0">any problem every solution.</p>
-                <a href="{{ route('login') }}" class="btn btn-primary btn-lg rounded-0 mt-4">Login</a>
-            </div>
-        </div>
-    </header>
+    @include('layouts/admin-navbar')
+    <div class="app-body">
+        <header>
+            <div class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="components/buttons.html"><i class="icon-puzzle"></i> Customer's Information</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="components/buttons.html"><i class="icon-puzzle"></i> Service Center
+                                Detail</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="components/social-buttons.html"><i class="icon-puzzle"></i>
+                                Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="components/social-buttons.html"><i class="icon-puzzle"></i>
+                                Billing</a>
+                        </li>
+                    </ul>
+        </header>
+    </div>
 
-@endsection
+    <div class="row">
+        <div class="col-md-4 py-4 card mt-4 ml-6">
+            <h1>Header</h1>
+        </div>
+    </div>
+
+
+    @endsection

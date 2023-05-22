@@ -12,7 +12,7 @@
             </div>
 
             <!-- Form -->
-            <form action="" method="post">
+            <form action="{{ route('admin-auth') }}" method="post" >
                 @csrf
                 <div class="form_wrap">
                     <!-- Email Id input Place -->
@@ -46,7 +46,7 @@
                 </div>
             </form>
         </div>
-        <a href="{{ route('admin_dashbboard') }}">
-        </a>
+        {{-- <a href="{{ route('admin_dashboard') }}">
+        </a> --}}
     </div>
 @endsection
