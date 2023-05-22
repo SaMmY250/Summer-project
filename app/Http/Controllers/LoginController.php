@@ -6,6 +6,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -13,18 +14,32 @@ class LoginController extends Controller
     {
         // dd($request->except('_token'));
         $credentials = [
-            'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password')),
+            'name' => $request['name'],
+            // 'email' => $request->input('email'),
+            'password' => $request['password']
         ];
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('home');
+            return redirect()->route('admin-dashboard');
         } else {
-            $script = "<script>
-                alert('Login Failed');
-            </script>";
-            echo $script;
+            $error = $this->getLoginErrorMessage($credentials);
+            dd($error);
         }
+    }
+
+    private function getLoginErrorMessage($credentials)
+    {
+        $user = User::where('name', $credentials['name'])->first();
+
+        if (!$user) {
+            return 'Invalid username.';
+        }
+
+        if (!Hash::check($credentials['password'], $user->password)) {
+            return 'Invalid password.';
+        }
+
+        return "Login Failed";
     }
 
     public function setLogin(Request $request)
@@ -39,6 +54,6 @@ class LoginController extends Controller
         $user->created_at = $date;
         $user->save();
 
-        return redirect()->route('userloginpage')->with('success', 'Added user');
+        return redirect()->route('admin-login')->with('success', 'Added user');
     }
 }

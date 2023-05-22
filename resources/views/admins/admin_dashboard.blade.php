@@ -8,7 +8,8 @@
                 <nav class="sidebar-nav">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="components/buttons.html"><i class="icon-puzzle"></i> Customer's Information</a>
+                            <a class="nav-link" href="components/buttons.html"><i class="icon-puzzle"></i> Customer's
+                                Information</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="components/buttons.html"><i class="icon-puzzle"></i> Service Center
@@ -33,4 +34,4 @@
     </div>
 
 
-    @endsection
+@endsection

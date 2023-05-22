@@ -24,10 +24,6 @@ Route::get('/home', function () {
     return view('users.dashboard');
 })->name('home');
 
-Route::get('/admin/login/', function () {
-    return view('admins.login');
-})->name('admin-login');
-Route::post('/admin/login/view',[admincontroller::class,'adminAuth'])->name('admin-auth');
 
 Route::get('/aboutus', function () {
     return view('users.aboutus');
@@ -50,23 +46,21 @@ Route::get('/submit-form-view', function () {
     return view('users.submit-form');
 })->name('submit-form-view');
 
-
-
-
-
-
 // Route::get('/user/login', function () {
 //     return view('users.userloginpage');
 // })->name('userloginpage');
 
-// Route::get('/user/register', function () {
-//     return view('users.register');
-// })->name('register');
+Route::get('/admin/register', function () {
+    return view('admins.register');
+})->name('admin.register');
 
-Route::post('/user/check', [LoginController::class, 'loginCheck'])->name('login.check');
-Route::post('/user/set', [LoginController::class, 'setLogin'])->name('login.set');
+Route::get('/admin/login/', function () {
+    return view('admins.login');
+})->name('admin-login');
+
+Route::post('/admin/check', [LoginController::class, 'loginCheck'])->name('login.check');
+Route::post('/admin/set', [LoginController::class, 'setLogin'])->name('login.set');
 
 //Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
 
-Route::get('/',array('as'=>'admin','uses'=>'admincontroller@index'));
-
+// Route::get('/', array('as' => 'admin', 'uses' => 'admincontroller@index'));

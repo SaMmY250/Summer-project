@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'login')
+@section('title', 'Admin Register')
 @section('body')
     <script src="{{ asset('js/main.js') }}"></script>
     <div class="wrapper linear-background">
@@ -8,7 +8,7 @@
         <div class="registration_form">
             <!-- Title -->
             <div class="title">
-                User Register
+                Admin Register
             </div>
 
             <!-- Form -->
@@ -46,7 +46,7 @@
 
                     <div class="input_wrap">
                         <span class="center-alignment" style="margin:18px 60px auto 60px">
-                            <a href="{{ route('userloginpage') }}">
+                            <a href="{{ route('admin-login') }}">
                                 Go to Login
                             </a>
                         </span>

@@ -8,17 +8,17 @@
         <div class="registration_form">
             <!-- Title -->
             <div class="title">
-                Login Form
+                Admin Login Form
             </div>
 
             <!-- Form -->
-            <form action="{{ route('admin-auth') }}" method="post" >
+            <form action="{{ route('login.check') }}" method="post">
                 @csrf
                 <div class="form_wrap">
                     <!-- Email Id input Place -->
                     <div class="input_wrap">
                         <label>Admin name</label>
-                        <input type="text" name="admin" required>
+                        <input type="text" name="name" required>
                     </div>
 
                     <div class="input_wrap">
