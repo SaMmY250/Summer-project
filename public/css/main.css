@@ -53,7 +53,7 @@ main {
 }
 
 .registration_form {
-    border-radius: 6px;
+    border-radius: 16px;
     width: 400px;
     background: white;
     padding: 25px;
@@ -61,10 +61,10 @@ main {
 }
 
 .registration_form .title {
+    border-radius: 10px 10px 0 0;
     color: white;
     background: rgb(13, 98, 215);
-    letter-spacing: 2px;
-    font-weight: 700;
+    font-weight: bold;
     text-align: center;
     font-size: 25px;
     text-transform: uppercase;
@@ -73,7 +73,7 @@ main {
     margin-right: -25px;
 }
 
-.nothing{
+.nothing {
     padding: 0% !important;
     margin: 0% !important;
     width: 8% !important;
@@ -81,11 +81,11 @@ main {
 }
 
 .form_wrap {
-    margin-top: 35px;
+    margin-top: 32px;
 }
 
 .form_wrap .input_wrap {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .form_wrap .input_wrap:last-child {
