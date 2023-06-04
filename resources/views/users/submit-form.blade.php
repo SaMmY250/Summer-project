@@ -2,14 +2,14 @@
 @section('title', 'Fill up')
 @section('body')
     @include('layouts/navbar')
-    <div class="container form_wrap ">
+    <div class="form_wrap container">
         <form method="POST" action="{{ route('submit-form-post') }}">
             @csrf
             <div class="row">
-                <div class="col-md-6 px-4 py-2 ">
+                <div class="col-md-6 px-4 py-2">
                     <label for="vehicle-type" class="my-2">Vehicle Type:</label>
                     <div class="input_wrap">
-                       <input class="nothing" type="radio" name="vehicle-type" value="Bike" required>Bike <br>
+                        <input class="nothing" type="radio" name="vehicle-type" value="Bike" required>Bike <br>
                         <input class="nothing" type="radio" name="vehicle-type" value="Scooty">Scooty
                     </div>
 
@@ -32,10 +32,10 @@
 
                     <label for="services" class="my-2">Services:</label><br>
                     <div class="input-warp">
-                        <input type="checkbox"class="nothing" name="service1" value="Engine Service">Engine Service<br>
-                        <input type="checkbox"class="nothing" name="service2" value="bike wash">Bike Wash<br>
-                        <input type="checkbox"class="nothing" name="service3" value="tire replacement">Tire Replacement<br>
-                        <input type="checkbox"class="nothing" name="service4" value="oil change">Oil Change<br>
+                        <input type="checkbox"class="nothing" name="service[]" value="Engine Service">Engine Service<br>
+                        <input type="checkbox"class="nothing" name="service[]" value="bike wash">Bike Wash<br>
+                        <input type="checkbox"class="nothing" name="service[]" value="tire replacement">Tire Replacement<br>
+                        <input type="checkbox"class="nothing" name="service[]" value="oil change">Oil Change<br>
                     </div>
 
                     <label for="request-type" class="my-2">Request Type:</label>
@@ -47,6 +47,8 @@
 
                     <br>
                     <button type="submit" class="btn btn-primary mt-1">Submit</button>
+                    {{-- <button id="popupButton" class="btn btn-info mt-1" type='button'>Search</button> --}}
+
                 </div>
             </div>
         </form>
