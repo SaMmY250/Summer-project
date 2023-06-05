@@ -12,7 +12,7 @@
             </div>
 
             <!-- Form -->
-            <form action="{{ route('login.set') }}" method="post">
+            <form action="{{ route('admin.login.set') }}" method="post">
                 @csrf
                 <div class="form_wrap">
                     <!-- Name Id input Place -->
@@ -47,7 +47,7 @@
 
                     <div class="input_wrap">
                         <span class="center-alignment" style="margin:18px 60px auto 60px">
-                            <a href="{{ route('admin-login') }}">
+                            <a href="{{ route('admin.login') }}">
                                 Go to Login
                             </a>
                         </span>

@@ -65,12 +65,31 @@ class LoginController extends Controller
         return "Login Failed";
     }
 
-    public function setLogin(Request $request)
+    public function setAdminLogin(Request $request)
     {
-        $user = new User();
+        if (Auth::check())
+            Auth::logout();
 
         $date = Carbon::now()->format('Y-m-d');
 
+        $admin = new User();
+        $admin->email = $request->email;
+        $admin->name = $request->name;
+        $admin->password = bcrypt($request->password);
+        $admin->created_at = $date;
+        $admin->role_name = $request->role;
+        $admin->save();
+        return redirect()->route('admin.login')->with('success', 'Added user');
+    }
+
+    public function setUserLogin(Request $request)
+    {
+        if (Auth::check())
+            Auth::logout();
+
+        $date = Carbon::now()->format('Y-m-d');
+
+        $user = new User();
         $user->email = $request->email;
         $user->name = $request->name;
         $user->password = bcrypt($request->password);
@@ -78,6 +97,7 @@ class LoginController extends Controller
         $user->role_name = $request->role;
         $user->save();
 
-        return redirect()->route('admin-login')->with('success', 'Added user');
+        return redirect()->route('user.login')->with('success', 'Added user');
+
     }
 }

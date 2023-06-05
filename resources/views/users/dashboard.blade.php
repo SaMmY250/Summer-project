@@ -10,7 +10,7 @@
             <div class="text-center text-black">
                 <h1 class="display-4 fw-bolder">Bike management system</h1>
                 <p class="lead fw-normal text-black-50 mb-0">any problem every solution.</p>
-                <a href="{{ route('submit-form-view') }}" class="btn btn-primary btn-lg rounded-4 mt-4">Login</a>
+                <a href="{{ route('user.login') }}" class="btn btn-primary btn-lg rounded-4 mt-4">Login</a>
             </div>
         </div>
     </header>
