@@ -16,9 +16,9 @@ use App\Http\Controllers\admincontroller;
 |
 */
 
-// Route::get('/', function () {
-//     return view('users.dashboard');
-// });
+Route::get('/', function () {
+    return redirect('/home');
+});
 
 Route::get('/home', function () {
     return view('users.dashboard');
@@ -30,7 +30,7 @@ Route::get('/aboutus', function () {
 })->name('aboutus');
 Route::get('/admin/aboutus', function () {
     return view('admins.aboutus');
-})->name('admin-aboutus');
+})->name('admin.aboutus');
 
 // Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
@@ -38,7 +38,7 @@ Route::get('/admin/aboutus', function () {
 // Route::get('/admin/dashboard', '')->middleware('auth')->name ('admin_dashboard');
 Route::get('/admin/dashboard', function () {
     return view('admins.admin_dashboard');
-})->name('admin-dashboard')->middleware('auth');
+})->name('admin.dashboard')->middleware('auth');
 
 Route::post('/submit-form-post', [FormController::class, 'form_table'])->name('submit-form-post');
 

@@ -37,6 +37,7 @@
                         <input type="checkbox" onclick="showPassword()">
                     </div>
                     <br>
+                    <input type="hidden" name="role" value="admin">
                     <!-- Submit button -->
                     <div class="input_wrap">
                         <input type="submit" value="register" class="submit_btn">

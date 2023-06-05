@@ -6,8 +6,8 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
             <ul class="navbar-nav">
-                <li><a class="nav-link" href="{{ route('admin-dashboard') }}">Admin</a></li>
-                <li></li><a class="nav-link" href="{{ route('admin-aboutus') }}">About us</a></li>
+                <li><a class="nav-link" href="{{ route('admin.dashboard') }}">Admin</a></li>
+                <li></li><a class="nav-link" href="{{ route('admin.aboutus') }}">About us</a></li>
                 {{-- <li class="nav-item"><a class="nav-link" href="{{ route('admin-logout') }}">Log out</a></li> --}}
             </ul>
         </div>
