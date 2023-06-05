@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('form_table', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('vehicle_type');
-            $table->string('owner_name');
-            $table->string('owner_contact');
-            $table->string('owner_email');
             $table->string('vehicle_name');
             $table->string('vehicle_lot_num');
             $table->string('services');
             $table->string('request_type');
+            $table->unsignedInteger('customer_id');
             $table->timestamps();
+
+            // $table->foreign('customer_id')->references('id')->on('customer_detail')->onDelete('set null');
         });
     }
 
