@@ -62,7 +62,8 @@ Route::get('/admin/login/', function () {
     return view('admins.login');
 })->name('admin.login');
 
-Route::post('/check', [LoginController::class, 'loginCheck'])->name('login.check');
+Route::post('/admin/check', [LoginController::class, 'adminLoginCheck'])->name('admin.login.check');
+Route::post('/user/check', [LoginController::class, 'userLoginCheck'])->name('user.login.check');
 Route::post('/admin/set', [LoginController::class, 'setAdminLogin'])->name('admin.login.set');
 Route::post('/user/set', [LoginController::class, 'setUserLogin'])->name('user.login.set');
 

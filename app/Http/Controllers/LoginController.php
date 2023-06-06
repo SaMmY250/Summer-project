@@ -11,7 +11,7 @@ use DB;
 
 class LoginController extends Controller
 {
-    public function loginCheck(Request $request)
+    public function adminLoginCheck(Request $request)
     {
         // dd($request->except('_token'));
         $credentials = [
@@ -22,32 +22,29 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            return redirect()->route('admin.dashboard');
 
-            $name = Auth::user()->name;
-            $password = Auth::user()->password;
-
-            if ($this->isAdmin($name, $password))
-                return redirect()->route('admin.dashboard');
-            else
-                return redirect()->route('home');
         } else {
             $error = $this->getLoginErrorMessage($credentials);
             dd($error);
         }
     }
 
-    private function isAdmin($username, $password)
+    public function userLoginCheck(Request $request)
     {
-        $role = DB::table('users')
-            ->selectRaw('role_name')
-            ->where('name', '=', $username)
-            ->where('password', '=', $password)
-            ->first();
+        $credentials = [
+            'email' => $request['email'],
+            'password' => $request['password']
+        ];
 
-        if ($role->role_name == 'admin')
-            return true;
-        else
-            return false;
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->route('home');
+        } else {
+            $error = $this->getLoginErrorMessage($credentials);
+            dd($error);
+        }
     }
 
     private function getLoginErrorMessage($credentials)
@@ -84,7 +81,7 @@ class LoginController extends Controller
 
     public function setUserLogin(Request $request)
     {
-        if (Auth::check())
+        if (Auth::check() && Auth::user()->role_name == 'admin')
             Auth::logout();
 
         $date = Carbon::now()->format('Y-m-d');
@@ -97,7 +94,21 @@ class LoginController extends Controller
         $user->role_name = $request->role;
         $user->save();
 
+        // $email = $request->email;
+        // $name = $request->name;
+        // $password = bcrypt($request->password);
+        // $created_at = $date;
+        // $role_name = $request->role;
+
+        // $data = DB::insert(
+        //     'insert into users (name,email,password,role_name,created_at) values (?,?,?,?,?)',
+        //     [$name, $email, $password, $role_name, $created_at]
+        // );
+
         return redirect()->route('user.login')->with('success', 'Added user');
+        // if ($data)
+        // else
+        //     return redirect()->route('user.login')->with('failed', 'Failed to add user');
 
     }
 }
