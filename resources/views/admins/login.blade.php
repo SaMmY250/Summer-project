@@ -12,7 +12,7 @@
             </div>
 
             <!-- Form -->
-            <form action="{{ route('login.check') }}" method="post">
+            <form action="{{ route('admin.login.check') }}" method="post">
                 @csrf
                 <div class="form_wrap">
                     <!-- Email Id input Place -->
