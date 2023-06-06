@@ -5,7 +5,8 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      */
@@ -14,17 +15,17 @@ return new class extends Migration {
         Schema::dropIfExists('role');
 
         Schema::create('role', function (Blueprint $table) {
-            $table->integer('role_number')->unique();
+            // $table->integer('role_number')->unique();
             $table->string('role_name')->primary()->unique()->nullable(false);
             $table->timestamps();
         });
 
         DB::table('role')->insert(
-            array('role_number' => `580`, 'role_name' => "admin")
+            array('role_name' => "admin")
         );
 
         DB::table('role')->insert(
-            array('role_number' => `137`, 'role_name' => "user")
+            array('role_name' => "user")
         );
     }
 
