@@ -4,13 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
+        Schema::dropIfExists('form_table');
+
         Schema::create('form_table', function (Blueprint $table) {
             $table->increments('id');
             $table->string('vehicle_type');
@@ -20,9 +21,14 @@ return new class extends Migration
             $table->string('request_type');
             $table->unsignedInteger('customer_id');
             $table->timestamps();
-
-            // $table->foreign('customer_id')->references('id')->on('customer_detail')->onDelete('set null');
         });
+
+        /*
+        ALTER TABLE users
+        ADD CONSTRAINT role_name
+        FOREIGN KEY (role_name)
+        REFERENCES role(role_name);
+         */
     }
 
     /**

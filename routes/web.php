@@ -16,9 +16,9 @@ use App\Http\Controllers\admincontroller;
 |
 */
 
-// Route::get('/', function () {
-//     return view('users.dashboard');
-// });
+Route::get('/', function () {
+    return redirect('/home');
+});
 
 Route::get('/', function () {
     return view('users.dashboard');
@@ -30,7 +30,7 @@ Route::get('/aboutus', function () {
 })->name('aboutus');
 Route::get('/admin/aboutus', function () {
     return view('admins.aboutus');
-})->name('admin-aboutus');
+})->name('admin.aboutus');
 
 // Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
@@ -38,14 +38,17 @@ Route::get('/admin/aboutus', function () {
 // Route::get('/admin/dashboard', '')->middleware('auth')->name ('admin_dashboard');
 Route::get('/admin/dashboard', function () {
     return view('admins.admin_dashboard');
-})->name('admin-dashboard')->middleware('auth');
+})->name('admin.dashboard')->middleware('auth');
 
 Route::post('/submit-form-post', [FormController::class, 'form_table'])->name('submit-form-post');
 
-Route::get('/submit-form-view', function () {
-    return view('users.submit-form');
-    // return view('users.step-form');
-})->name('submit-form-view');
+Route::get('/user/login', function () {
+    return view('users.login');
+})->name('user.login');
+
+Route::get('/user/register', function () {
+    return view('users.register');
+})->name('user.register');
 
 // Route::get('/user/login', function () {
 //     return view('users.userloginpage');
@@ -57,10 +60,11 @@ Route::get('/admin/register', function () {
 
 Route::get('/admin/login/', function () {
     return view('admins.login');
-})->name('admin-login');
+})->name('admin.login');
 
-Route::post('/admin/check', [LoginController::class, 'loginCheck'])->name('login.check');
-Route::post('/admin/set', [LoginController::class, 'setLogin'])->name('login.set');
+Route::post('/check', [LoginController::class, 'loginCheck'])->name('login.check');
+Route::post('/admin/set', [LoginController::class, 'setAdminLogin'])->name('admin.login.set');
+Route::post('/user/set', [LoginController::class, 'setUserLogin'])->name('user.login.set');
 
 //Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
 
