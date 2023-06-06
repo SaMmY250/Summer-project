@@ -20,7 +20,7 @@ use App\Http\Controllers\admincontroller;
 //     return view('users.dashboard');
 // });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('users.dashboard');
 })->name('home');
 
@@ -43,8 +43,8 @@ Route::get('/admin/dashboard', function () {
 Route::post('/submit-form-post', [FormController::class, 'form_table'])->name('submit-form-post');
 
 Route::get('/submit-form-view', function () {
-    // return view('users.submit-form');
-    return view('users.step-form');
+    return view('users.submit-form');
+    // return view('users.step-form');
 })->name('submit-form-view');
 
 // Route::get('/user/login', function () {

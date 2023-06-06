@@ -21,6 +21,9 @@
 
                     <label for="email" class="my-2">Email:</label>
                     <input type="email" name="email" id="email" required>
+
+                    <label for="customer_id" class="my-2">Customer_id:</label>
+                    <input type="number" name="customer_id" id="customer_id" required>
                 </div>
 
                 <div class="col-md-6 px-4 py-2">
