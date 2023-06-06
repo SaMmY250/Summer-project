@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\admincontroller;
+use App\Http\Controllers\LogoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +61,12 @@ Route::get('/admin/register', function () {
 Route::get('/admin/login/', function () {
     return view('admins.login');
 })->name('admin.login');
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/user/logout', [LogoutController::class, "userLogout"])->name('user.logout');
+    Route::get('/admin/logout', [LogoutController::class, "adminLogout"])->name('admin.logout');
+});
 
 Route::post('/admin/check', [LoginController::class, 'adminLoginCheck'])->name('admin.login.check');
 Route::post('/user/check', [LoginController::class, 'userLoginCheck'])->name('user.login.check');

@@ -42,7 +42,10 @@
             <!-- Notifications -->
             <div class="navbar-nav me-auto mb-lg-0 ms-lg-4 mb-2 flex-row-reverse">
                 @if (Auth::check() && Auth::user()->role_name == 'user')
-                    <label class="nav-link"> {{ Auth::user()->name }} </label>
+                    <a href="{{ route('user.logout') }}">
+                        <button class="btn btn-danger">logout</button>
+                    </a>
+                    <label class="nav-link mx-md-2"> {{ Auth::user()->name }} </label>
                 @endif
             </div>
             <!-- Right elements -->
