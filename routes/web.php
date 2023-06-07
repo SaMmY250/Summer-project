@@ -42,6 +42,24 @@ Route::get('/admin/dashboard', function () {
 
 Route::get('/admin/customer_details', [FormController::class, 'getData'])->name('admin.customer-details')->middleware('auth');
 
+Route::get('/admin/billing', function () {
+    return view('admins.billing');
+})->name('admin.billing')->middleware('auth');
+
+Route::get('/admin/services', function () {
+    return view('admins.service_center');
+})->name('admin.service_center')->middleware('auth');
+
+/**
+ *
+ * Examples
+            Route::get('/admin/services', function () {
+                $data = DB::select(''); => inner join
+                 return view('admins.customer', ['data' => $data]);
+            })->name('admin.service_center')->middleware('auth');
+ *
+ */
+
 Route::post('/submit-form-post', [FormController::class, 'form_table'])->name('submit-form-post');
 
 Route::get('/user/submit_form', function () {

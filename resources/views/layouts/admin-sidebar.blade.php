@@ -38,13 +38,13 @@
         <a class="nav-link" href="{{ route('admin.customer-details') }}"> Customer's Information</a>
     </div>
 
-    <div class="w3-bar-item nav-item mt-2">
+    {{-- <div class="w3-bar-item nav-item mt-2">
         <a class="nav-link" href="">Service Center Detail</a>
     </div>
 
     <div class="w3-bar-item nav-item mt-2">
-        <a class="nav-link" href="">Billing</a>
-    </div>
+        <a class="nav-link" href="{{ route('admin.billing') }}">Billing</a>
+    </div> --}}
 
     <button onclick="w3_close()" class="w3-bar-item w3-large btn btn-danger mt-4">Close &times;</button>
 </nav>

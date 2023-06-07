@@ -7,5 +7,5 @@
     @include('layouts/admin-navbar')
     <script src="{{ asset('js/main.js') }}"></script>
     @include('layouts/admin-sidebar')
-
+    <h1>Service</h1>
 @endsection

@@ -13,9 +13,31 @@
                 <h1><u>Welcome, {{ Auth::user()->name }}</u></h1>
             @endif
             <h2 class="mt-4">Summary</h2>
-            <div class="w3-container card">
-                <div class=""></div>
+            <div class="w3-container mt-2">
+                <div class="content-wrapper pt-2">
+                    <!-- Main content -->
+                    <section class="content text-white">
+                        <div class="w3-container">
+                            <div class="row info-box">
+                                <div class="info-box-content col-md-3 bg-dark container">
+                                    <span class="info-box-text">Total Category</span>
+                                    <span class="info-box-number">2</span>
+                                </div>
+                                <div class="info-box-content col-md-3 bg-dark container">
+                                    <span class="info-box-text">Total Category</span>
+                                    <span class="info-box-number">2</span>
+                                </div>
+                                <div class="info-box-content col-md-3 bg-dark container">
+                                    <span class="info-box-text">Total Category</span>
+                                    <span class="info-box-number">2</span>
+                                </div>
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
+    <!-- /.content-wrapper -->
 @endsection
