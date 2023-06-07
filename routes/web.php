@@ -40,7 +40,13 @@ Route::get('/admin/dashboard', function () {
     return view('admins.admin_dashboard');
 })->name('admin.dashboard')->middleware('auth');
 
+Route::get('/admin/customer_details', [FormController::class, 'getData'])->name('admin.customer-details')->middleware('auth');
+
 Route::post('/submit-form-post', [FormController::class, 'form_table'])->name('submit-form-post');
+
+Route::get('/user/submit_form', function () {
+    return view('users.submit-form');
+})->name('user.submit-form');
 
 Route::get('/user/login', function () {
     return view('users.login');

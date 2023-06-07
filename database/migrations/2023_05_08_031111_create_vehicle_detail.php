@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      */
@@ -13,15 +14,22 @@ return new class extends Migration {
         Schema::dropIfExists('form_table');
 
         Schema::create('form_table', function (Blueprint $table) {
+
             $table->increments('id');
             $table->string('vehicle_type');
             $table->string('vehicle_name');
             $table->string('vehicle_lot_num');
-            $table->string('services');
             $table->string('request_type');
-            $table->unsignedInteger('customer_id');
+            $table->unsignedBigInteger('customer_id');
             $table->timestamps();
         });
+
+        /*
+        ALTER TABLE form_table
+        ADD CONSTRAINT customer_id
+        FOREIGN KEY (id)
+        REFERENCES users(id);
+         */
 
         /*
         ALTER TABLE users

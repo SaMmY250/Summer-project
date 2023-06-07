@@ -11,12 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('billing', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("service_id");
+            $table->string('price');
             $table->timestamps();
-            $table->string('name');
-            $table->string('password');
         });
+
+        /*
+        ALTER TABLE billing
+        ADD CONSTRAINT service_id
+        FOREIGN KEY (service_id)
+        REFERENCES services(id);
+         */
     }
 
     /**
@@ -24,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('billing');
     }
 };

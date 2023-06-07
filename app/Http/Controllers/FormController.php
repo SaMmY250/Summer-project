@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use DB; // Database
 
@@ -13,38 +14,12 @@ class FormController extends Controller
     public function form_table(Request $request)
     {
         // dd($request);
-        $vehicle_type = $request->input('vehicle-type');
-        $full_name = $request->input('full-name');
-        $contact = $request->input('contact');
-        $email = $request->input('email');
-        $vehicle_name = $request->input('vehicle-name');
-        $vehicle_lot_no = $request->input('vehicle-lot-num');
-        $request_type = $request->input('request-type');
-        $services = $request->input('service');
-
-
-        /* if ($request->input('service1')) {
-            array_push($services, $request->input('service1'));
-        }
-        if ($request->input('service2')) {
-            array_push($services, $request->input('service2'));
-        }
-        if ($request->input('service3')) {
-            array_push($services, $request->input('service3'));
-        }
-        if ($request->input('service4')) {
-            array_push($services, $request->input('service4'));
-        }*/
-        if ($this->hasEmail($email)) {
-            dd($request);
-        } else {
-            $detail = array(
-                "owner_name" => $full_name,
-                "owner_contact" => $contact,
-                "email" => $email,
-                "created_at" => Carbon::now(),
-            );
-            DB::table('customer_detail')->insert($detail);
+        if (Auth::check() && Auth::user()->role_name == 'user') {
+            $services = $request->input('service');
+            $vehicle_type = $request->input('vehicle-type');
+            $vehicle_name = $request->input('vehicle-name');
+            $vehicle_lot_no = $request->input('vehicle-lot-num');
+            $request_type = $request->input('request-type');
 
             foreach ($services as $ser) {
                 $data = array(
@@ -53,21 +28,18 @@ class FormController extends Controller
                     'vehicle_lot_num' => $vehicle_lot_no,
                     'services' => $ser,
                     'request_type' => $request_type,
+                    'customer_id' => Auth::user()->id
                 );
                 DB::table('form_table')->insert($data);
             }
+            echo "<h1>Success</h1>";
+            // Here to redirect
         }
-        echo "<h1>Success</h1>";
     }
 
-    private function hasEmail($email)
+    public function getData()
     {
-        $exists = DB::table('customer_detail')->where('email', $email)->exists();
-
-        if ($exists) {
-            return true;
-        } else {
-            return false;
-        }
+        $users = DB::select('SELECT * FROM users WHERE role_name = "user"');
+        return view('admins.customer', ['users' => $users]);
     }
 }

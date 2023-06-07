@@ -13,7 +13,9 @@
                 <h1><u>Welcome, {{ Auth::user()->name }}</u></h1>
             @endif
             <h2 class="mt-4">Summary</h2>
+            <div class="w3-container card">
+                <div class=""></div>
+            </div>
         </div>
-
     </div>
 @endsection

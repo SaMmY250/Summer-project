@@ -6,12 +6,12 @@
     @include('layouts/navbar')
 
     <header class="content-image py-md-5">
-        <div class="container my-4 px-md-4">
+        <div class="px-md-4 container my-4">
             <div class="text-center text-black">
                 <h1 class="display-4 fw-bolder">Bike management system</h1>
                 <p class="lead fw-normal text-black-50 mb-0">any problem every solution.</p>
                 @if (Auth::check() && Auth::user()->role_name == 'user')
-                    <a href="#" class="btn btn-primary btn-lg rounded-4 mt-4">Submit form</a>
+                    <a href="{{ route('user.submit-form') }}" class="btn btn-primary btn-lg rounded-4 mt-4">Submit form</a>
                 @else
                     <a href="{{ route('user.login') }}" class="btn btn-primary btn-lg rounded-4 mt-4">Login</a>
                 @endif
