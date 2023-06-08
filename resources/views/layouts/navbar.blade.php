@@ -24,11 +24,11 @@
     <div class="container-fluid">
 
         <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
             <!-- Navbar brand -->
-            <label class="navbar-brand mt-2 mt-lg-0"> Mhepi Auto Workshop </label>
+            <label class="navbar-brand mt-lg-0 mt-2"> Mhepi Auto Workshop </label>
             <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-lg-0 mb-2">
                 <li><a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a></li>
                 <li><a class="nav-link" href="{{ route('aboutus') }}">About us</a></li>
             </ul>

@@ -20,16 +20,16 @@
                         <div class="w3-container">
                             <div class="row info-box">
                                 <div class="info-box-content col-md-3 bg-dark container">
-                                    <span class="info-box-text">Total Category</span>
+                                    <span class="info-box-text">Toatal Category</span>
                                     <span class="info-box-number">2</span>
                                 </div>
                                 <div class="info-box-content col-md-3 bg-dark container">
-                                    <span class="info-box-text">Total Category</span>
-                                    <span class="info-box-number">2</span>
+                                    <span class="info-box-text">Mechanics</span>
+                                    <span class="info-box-number">8</span>
                                 </div>
                                 <div class="info-box-content col-md-3 bg-dark container">
-                                    <span class="info-box-text">Total Category</span>
-                                    <span class="info-box-number">2</span>
+                                    <span class="info-box-text">Services</span>
+                                    <span class="info-box-number">4</span>
                                 </div>
                             </div>
                             <!-- /.info-box -->
