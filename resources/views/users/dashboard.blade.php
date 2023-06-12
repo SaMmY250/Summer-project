@@ -11,9 +11,11 @@
                 <h1 class="display-4 fw-bolder">Bike management system</h1>
                 <p class="lead fw-normal text-black-50 mb-0">Providing quality service our no.1 priority.</p>
                 @if (Auth::check() && Auth::user()->role_name == 'user')
-                    <a href="{{ route('user.submit-form') }}" class="btn btn-primary btn-lg rounded-4 mt-4">Submit form</a>
+                    <a href="{{ route('user.submit-form') }}" class="btn btn-info btn-lg rounded-4 mt-4 text-white">Add
+                        Vehicle</a>
                 @else
-                    <a href="{{ route('user.login') }}" class="btn btn-primary btn-lg rounded-4 mt-4">Online Form FillUp</a>
+                    <a href="{{ route('user.login') }}" class="btn btn-primary btn-lg rounded-4 mt-4">Online Form
+                        Fillup</a>
                 @endif
             </div>
         </div>
@@ -33,7 +35,7 @@
             <div class="col-sm-2">Bike</div>
             <div class="col-sm-2">Engineen tune</div>
             <div class="col-sm-2">01-425688</div>
-            <div class="col-sm-2">(10am-5pm)</div>
+            <div class="col-sm-2"><span class="start">10am</span>-<span class="end">5pm</span></div>
             <div class="col-sm-2">Mhepiautoworkshop@gmail.com</div>
         </div>
 
@@ -41,10 +43,10 @@
             <div class="col-sm-2">Scooter</div>
             <div class="col-sm-2">Oil change</div>
             <div class="col-sm-2">9813498649</div>
+            <div class="col-sm-2"></div>
         </div>
 
         <div class="row mt-2">
-
             <div class="col-sm-2"></div>
             <div class="col-sm-2">Tire Replacement</div>
             <div class="col-sm-2"></div>
@@ -57,6 +59,5 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-2"></div>
         </div>
-
     </div>
 @endsection

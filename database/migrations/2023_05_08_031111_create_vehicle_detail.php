@@ -4,22 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::dropIfExists('form_table');
+        Schema::dropIfExists('vehicle_detail');
 
-        Schema::create('form_table', function (Blueprint $table) {
+        Schema::create('vehicle_detail', function (Blueprint $table) {
 
             $table->increments('id');
             $table->string('vehicle_type');
             $table->string('vehicle_name');
             $table->string('vehicle_lot_num');
-            $table->string('request_type');
             $table->unsignedBigInteger('customer_id');
             $table->timestamps();
         });

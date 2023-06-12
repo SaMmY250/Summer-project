@@ -8,6 +8,12 @@
 
 @section('body')
     @include('layouts/navbar')
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <div id="login-form-wrap">
         <h2 style="font-weight: 300;text-align: center;">Login</h2>
         <form id="login-form" method="POST" action="{{ route('user.login.check') }}">

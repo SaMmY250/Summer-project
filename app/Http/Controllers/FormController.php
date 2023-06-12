@@ -15,25 +15,24 @@ class FormController extends Controller
     {
         // dd($request);
         if (Auth::check() && Auth::user()->role_name == 'user') {
-            $services = $request->input('service');
             $vehicle_type = $request->input('vehicle-type');
             $vehicle_name = $request->input('vehicle-name');
             $vehicle_lot_no = $request->input('vehicle-lot-num');
-            $request_type = $request->input('request-type');
 
-            foreach ($services as $ser) {
-                $data = array(
-                    'vehicle_type' => $vehicle_type,
-                    'vehicle_name' => $vehicle_name,
-                    'vehicle_lot_num' => $vehicle_lot_no,
-                    'services' => $ser,
-                    'request_type' => $request_type,
-                    'customer_id' => Auth::user()->id
-                );
-                DB::table('form_table')->insert($data);
-            }
-            echo "<h1>Success</h1>";
-            // Here to redirect
+            $data = array(
+                'vehicle_type' => $vehicle_type,
+                'vehicle_name' => $vehicle_name,
+                'vehicle_lot_num' => $vehicle_lot_no,
+                'customer_id' => Auth::user()->id,
+                'created_at' => Carbon::now()
+            );
+
+            if (DB::table('vehicle_detail')->insert($data))
+                session()->flash('success', 'Successfully inserted into database.');
+            else
+                session()->flash('error', 'Failed inserted into database.');
+
+            return redirect()->back();
         }
     }
 

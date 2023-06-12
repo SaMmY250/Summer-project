@@ -42,8 +42,16 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->route('home');
         } else {
-            $error = $this->getLoginErrorMessage($credentials);
-            dd($error);
+            $user = User::where('name', $credentials['email'])
+                ->where('password', $credentials['password'])
+                ->first();
+
+            if (!$user) {
+                session()->flash('error', 'Invalid credentials.');
+                return redirect()->back();
+            } else {
+                return redirect()->route('home');
+            }
         }
     }
 
