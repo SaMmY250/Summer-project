@@ -31,6 +31,10 @@
             <ul class="navbar-nav me-auto mb-lg-0 mb-2">
                 <li><a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a></li>
                 <li><a class="nav-link" href="{{ route('aboutus') }}">About us</a></li>
+                @if (Auth::check() && Auth::user()->role_name == 'user')
+                    <li><a class="nav-link" href="{{ route('user.services', [Auth::user()->id]) }}">Services</a>
+                    </li>
+                @endif
             </ul>
             <!-- Left links -->
         </div>
@@ -43,7 +47,10 @@
             <div class="navbar-nav me-auto mb-lg-0 ms-lg-4 mb-2 flex-row-reverse">
                 @if (Auth::check() && Auth::user()->role_name == 'user')
                     <a href="{{ route('user.logout') }}">
-                        <button class="btn btn-danger">logout</button>
+                        <button class="btn btn-danger py-sm-1">
+                            <img style="padding-right:8px" src="{{ asset('img/icon/logout.png') }}" alt="logout">
+                            Logout
+                        </button>
                     </a>
                     <label class="nav-link mx-md-2"> {{ Auth::user()->name }} </label>
                 @endif

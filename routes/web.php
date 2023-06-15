@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ServicesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LoginController;
@@ -73,6 +74,11 @@ Route::get('/user/login', function () {
 Route::get('/user/register', function () {
     return view('users.register');
 })->name('user.register');
+
+Route::get('/user/services/{id}', function ($id) {
+    $service = new ServicesController($id);
+    return view('users.services', ['id' => $id, 'service' => $service]);
+})->name('user.services');
 
 // Route::get('/user/login', function () {
 //     return view('users.userloginpage');
