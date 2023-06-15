@@ -24,40 +24,48 @@
 
     <div class="container py-4">
         <div class="row">
-            <div class="col-sm-2"><b>Our categories:</b></div>
-            <div class="col-sm-2"><b>Our Service:</b></div>
-            <div class="col-sm-2"><b>Contact Us:</b></div>
-            <div class="col-sm-2"><b>Working time:</b></div>
-            <div class="col-sm-2"><b>Email:</b></div>
-        </div>
+            <div class="col-sm-2">
+                <b>Our categories:</b>
+                <ul class="list-group-item mt-2">
+                    <li class="list-group-flush py-1">Bikes</li>
+                    <li class="list-group-flush py-1">Scooty</li>
+                </ul>
+            </div>
 
-        <div class="row mt-2">
-            <div class="col-sm-2">Bike</div>
-            <div class="col-sm-2">Engineen tune</div>
-            <div class="col-sm-2">01-425688</div>
-            <div class="col-sm-2"><span class="start">10am</span>-<span class="end">5pm</span></div>
-            <div class="col-sm-2">Mhepiautoworkshop@gmail.com</div>
-        </div>
+            <div class="col-sm-2">
+                <b>Our Services</b>
+                <ul class="list-group-item mt-2">
+                    <li class="list-group-flush py-1">Engine Tune</li>
+                    <li class="list-group-flush py-1">Oil Change</li>
+                    <li class="list-group-flush py-1">Tire replace</li>
+                    <li class="list-group-flush py-1">Overall chechup</li>
+                </ul>
+            </div>
 
-        <div class="row mt-2">
-            <div class="col-sm-2">Scooter</div>
-            <div class="col-sm-2">Oil change</div>
-            <div class="col-sm-2">9813498649</div>
-            <div class="col-sm-2"></div>
-        </div>
+            <div class="col-sm-2">
+                <b>Contant Us</b>
+                <ul class="list-group-item mt-2">
+                    <li class="list-group-flush py-1">01-425688</li>
+                    <li class="list-group-flush py-1">9813498649</li>
+                </ul>
+            </div>
 
-        <div class="row mt-2">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2">Tire Replacement</div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2"></div>
-        </div>
+            <div class="col-sm-2">
+                <b>Working time</b>
+                <ul class="list-group-item mt-2">
+                    <li class="list-group-flush py-1">10 am - 5 pm</li>
+                    <li class="list-group-flush py-1">9813498649</li>
+                </ul>
+            </div>
 
-        <div class="row mt-2">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2">Overall checkup</div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2"></div>
+
+            <div class="col-sm-2">
+                <b>Email</b>
+                <ul class="list-group-item mt-2">
+                    <li class="list-group-flush py-1">Mhepiautoworkshop@gmail.com</li>
+                </ul>
+            </div>
+
         </div>
     </div>
 @endsection
